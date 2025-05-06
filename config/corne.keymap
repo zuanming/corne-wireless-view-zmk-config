@@ -97,6 +97,16 @@
             #binding-cells = <0>;
             bindings = <&mkp MCLK>;
         };
+
+        mt3: mt3 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mod_tap3";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+        };
     };
 
     keymap {
@@ -114,7 +124,7 @@
 &kp ESCAPE    &kp Q             &kp W  &kp E              &kp R        &kp T        &kp Y         &kp U            &kp I             &kp O    &kp P                  &kp BACKSPACE
 &kp TAB       &kp A             &kp S  &kp D              &kp F        &kp G        &kp H         &kp J            &kp K             &kp L    &kp SEMI               &trans
 &kp LEFT_ALT  &mt LEFT_SHIFT Z  &kp X  &kp C              &kp V        &kp B        &kp N         &kp M            &kp COMMA         &kp DOT  &mt RIGHT_SHIFT SLASH  &kp RIGHT_GUI
-                                       &mt2 LCTRL ESCAPE  &lt 1 UNDER  &kp SPACE    &lt 5 RETURN  &lt 3 BACKSPACE  &mt2 RALT DELETE
+                                       &mt2 LCTRL ESCAPE  &lt 1 UNDER  &kp SPACE    &lt 5 RETURN  &lt 3 BACKSPACE  &mt3 RALT DELETE
             >;
         };
 
