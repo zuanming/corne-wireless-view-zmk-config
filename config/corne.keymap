@@ -16,6 +16,7 @@
     quick-tap-ms = <200>;
     hold-while-undecided;
     retro-tap;
+    hold-trigger-on-release;
 };
 
 &mt {
@@ -23,6 +24,8 @@
     quick-tap-ms = <200>;
     hold-while-undecided;
     retro-tap;
+    flavor = "balanced";
+    hold-trigger-on-release;
 };
 
 / {
