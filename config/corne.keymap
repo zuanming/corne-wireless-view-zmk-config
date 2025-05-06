@@ -40,13 +40,62 @@
         mt2: mt2 {
             compatible = "zmk,behavior-hold-tap";
             label = "mod_tap2";
-            bindings = <&none>, <&none>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             hold-while-undecided;
             hold-trigger-on-release;
+        };
+
+        ms_up: ms_up {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MS_UP";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_UP>;
+        };
+
+        ms_down: ms_down {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MS_DOWN";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_DOWN>;
+        };
+
+        ms_left: ms_left {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MS_LEFT";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_LEFT>;
+        };
+
+        ms_right: ms_right {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MS_RIGHT";
+            #binding-cells = <0>;
+            bindings = <&mmv MOVE_RIGHT>;
+        };
+
+        ms_lclick: ms_lclick {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MS_LCLICK";
+            #binding-cells = <0>;
+            bindings = <&mkp LCLK>;
+        };
+
+        ms_rclick: ms_rclick {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MS_RCLICK";
+            #binding-cells = <0>;
+            bindings = <&mkp RCLK>;
+        };
+
+        ms_mclick: ms_mclick {
+            compatible = "zmk,behavior-tap-dance";
+            label = "MS_MCLICK";
+            #binding-cells = <0>;
+            bindings = <&mkp MCLK>;
         };
     };
 
@@ -62,10 +111,10 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &kp Q  &kp W  &kp E            &kp R        &kp T        &kp Y         &kp U            &kp I            &kp O    &kp P     &kp BACKSPACE
-&kp TAB     &kp A  &kp S  &kp D            &kp F        &kp G        &kp H         &kp J            &kp K            &kp L    &kp SEMI  &trans
-&kp LCTRL   &kp Z  &kp X  &kp C            &kp V        &kp B        &kp N         &kp M            &kp COMMA        &kp DOT  &kp FSLH  &kp RIGHT_ALT
-                          &mt LGUI ESCAPE  &lt 1 UNDER  &kp SPACE    &lt 4 RETURN  &lt 2 BACKSPACE  &mt RALT DELETE
+&kp ESCAPE    &kp Q  &kp W  &kp E              &kp R        &kp T        &kp Y         &kp U            &kp I             &kp O    &kp P     &kp BACKSPACE
+&kp TAB       &kp A  &kp S  &kp D              &kp F        &kp G        &kp H         &kp J            &kp K             &kp L    &kp SEMI  &trans
+&kp LEFT_ALT  &kp Z  &kp X  &kp C              &kp V        &kp B        &kp N         &kp M            &kp COMMA         &kp DOT  &kp FSLH  &kp RIGHT_GUI
+                            &mt2 LCTRL ESCAPE  &lt 1 UNDER  &kp SPACE    &lt 4 RETURN  &lt 2 BACKSPACE  &mt2 RALT DELETE
             >;
         };
 
