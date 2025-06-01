@@ -47,7 +47,7 @@
         mt_l: mt_l {
             compatible = "zmk,behavior-hold-tap";
             label = "mt_l";
-            bindings = <&none>, <&none>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             hold-while-undecided;
@@ -62,7 +62,7 @@
         mt_r: mt_r {
             compatible = "zmk,behavior-hold-tap";
             label = "mt_r";
-            bindings = <&none>, <&none>;
+            bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <270>;
@@ -86,19 +86,19 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE    &kp Q  &kp W  &kp E         &kp R        &kp T          &kp Y         &kp U            &kp I         &kp O    &kp P     &kp BACKSPACE
-&kp TAB       &kp A  &kp S  &kp D         &kp F        &kp G          &kp H         &kp J            &kp K         &kp L    &kp SEMI  &kp SQT
-&kp LEFT_ALT  &none  &kp X  &kp C         &kp V        &kp B          &kp N         &kp M            &kp COMMA     &kp DOT  &none     &kp RIGHT_GUI
-                            &lt 4 ESCAPE  &lt 1 UNDER  &lt 3 SPACE    &lt 5 RETURN  &lt 2 BACKSPACE  &lt 6 DELETE
+&kp ESCAPE      &kp Q             &kp W             &kp E          &kp R               &kp T          &kp Y         &kp U                &kp I          &kp O              &kp P                &kp BACKSPACE
+&kp TAB         &mt_l LEFT_GUI A  &mt_l LEFT_ALT S  &mt_l LCTRL D  &mt_l LEFT_SHIFT F  &kp G          &kp H         &mt_r RIGHT_SHIFT J  &mt_r RCTRL K  &mt_r RIGHT_ALT L  &mt_r RIGHT_GUI SQT  &kp SEMICOLON
+&kp LEFT_SHIFT  &kp Z             &kp X             &kp C          &kp V               &kp B          &kp N         &kp M                &kp COMMA      &kp DOT            &kp SLASH            &kp RIGHT_SHIFT
+                                                    &lt 4 ESCAPE   &lt 1 UNDER         &lt 3 SPACE    &lt 5 RETURN  &lt 2 BACKSPACE      &lt 6 DELETE
             >;
         };
 
         Number {
             bindings = <
-&none  &none     &none     &none      &none      &none    &none  &kp N7  &kp N8  &kp N9  &kp EQUAL  &none
-&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &none  &kp N4  &kp N5  &kp N6  &none      &none
-&none  &none     &none     &none      &none      &none    &none  &kp N1  &kp N2  &kp N3  &none      &none
-                           &none      &none      &none    &none  &kp N0  &none
+&none  &none     &none     &none      &none      &none    &kp RS(N8)  &kp N7  &kp N8      &kp N9  &kp MINUS      &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp SLASH   &kp N4  &kp N5      &kp N6  &kp RS(EQUAL)  &none
+&none  &none     &none     &none      &none      &none    &kp COMMA   &kp N1  &kp N2      &kp N3  &kp EQUAL      &none
+                           &none      &none      &none    &none       &kp N0  &kp PERIOD
             >;
 
             label = "num";
@@ -106,10 +106,10 @@
 
         SYMBOLS {
             bindings = <
-&trans  &kp LBKT       &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp RBKT     &trans  &trans     &trans     &trans    &trans    &trans
-&trans  &kp SEMICOLON  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)  &kp EQUAL    &trans  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &trans
-&trans  &kp GRAVE      &kp LS(N7)  &kp LS(N8)  &kp BSLH    &kp MINUS    &trans  &trans     &trans     &trans    &trans    &trans
-                                   &trans      &trans      &trans       &trans  &trans     &trans
+&none  &kp LS(NUMBER_1)  &kp LS(NUMBER_2)  &kp LS(NUMBER_3)  &kp LS(NUMBER_4)   &kp GRAVE    &none  &none      &none      &none     &none     &none
+&none  &kp LS(N5)        &kp LS(NUMBER_6)  &kp LS(N7)        &kp BACKSLASH      &kp SEMI     &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+&none  &kp LS(N9)        &kp LS(N0)        &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &none        &none  &none      &none      &none     &none     &none
+                                           &none             &none              &none        &none  &none      &none
             >;
 
             label = "sym";
@@ -124,24 +124,24 @@
 
             display-name = "Navigation";
             bindings = <
-&none  &none  &none  &none  &none  &none    &kp RC(Y)  &kp RC(V)       &kp RC(C)       &kp RC(PAGE_UP)  &kp RC(Z)  &none
-&none  &none  &none  &none  &none  &none    &kp CAPS   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW     &kp RIGHT  &none
-&none  &none  &none  &none  &none  &none    &none      &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP      &kp END    &none
-                     &none  &none  &none    &none      &none           &none
+&none  &none     &none     &none      &none      &none    &kp RC(Y)  &kp RC(V)       &kp RC(C)       &kp RC(PAGE_UP)  &kp RC(Z)  &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &kp CAPS   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW     &kp RIGHT  &none
+&none  &none     &none     &none      &none      &none    &none      &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP      &kp END    &none
+                           &none      &none      &none    &none      &none           &none
             >;
 
             label = "Navigation";
         };
 
-        mouse {
+        Mouse {
             bindings = <
-&trans  &trans  &trans          &msc SCRL_UP    &trans           &trans    &trans  &trans          &mmv MOVE_UP    &trans           &trans  &trans
-&trans  &trans  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &trans    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans  &trans  &mkp RCLK       &mkp MCLK       &mkp LCLK        &trans    &trans  &mkp LCLK       &mkp MCLK       &mkp RCLK        &trans  &trans
-                                &trans          &trans           &trans    &trans  &trans          &trans
+&none  &none     &none     &none      &none      &none    &kp LC(Y)  &kp LC(V)       &kp LC(C)       &kp RC(X)     &kp RC(Z)        &none
+&none  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none    &none      &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+&none  &none     &none     &none      &none      &none    &none      &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP  &msc SCRL_RIGHT  &none
+                           &none      &none      &none    &none      &none           &none
             >;
 
-            label = "Mouse";
+            label = "mouse";
         };
 
         media {
@@ -157,13 +157,13 @@
 
         Function {
             bindings = <
-&trans  &kp F1  &kp F2   &kp F3   &kp F4   &kp LC(LS(ESCAPE))    &trans  &trans           &trans     &trans    &trans    &trans
-&trans  &kp F5  &kp F6   &kp F7   &kp F8   &kp LC(LA(DELETE))    &trans  &kp RIGHT_SHIFT  &kp LCTRL  &kp LALT  &kp LGUI  &trans
-&trans  &kp F9  &kp F10  &kp F11  &kp F12  &kp PRINTSCREEN       &trans  &trans           &trans     &trans    &trans    &trans
-                         &trans   &trans   &trans                &trans  &trans           &trans
+&none  &kp F1  &kp F2   &kp F3   &kp F4   &kp LC(LS(ESCAPE))    &none  &none            &none      &none     &none     &none
+&none  &kp F5  &kp F6   &kp F7   &kp F8   &kp LC(LA(DELETE))    &none  &kp RIGHT_SHIFT  &kp LCTRL  &kp LALT  &kp LGUI  &none
+&none  &kp F9  &kp F10  &kp F11  &kp F12  &kp PRINTSCREEN       &none  &none            &none      &none     &none     &none
+                        &none    &none    &none                 &none  &none            &none
             >;
 
-            label = "function";
+            label = "fun";
         };
     };
 };
