@@ -17,12 +17,7 @@
     hold-trigger-on-release;
 };
 
-&mt {
-    tapping-term-ms = <200>;
-    quick-tap-ms = <200>;
-    hold-while-undecided;
-    flavor = "hold-preferred";
-};
+&mt { tapping-term-ms = <200>; };
 
 / {
     combos {
