@@ -57,7 +57,7 @@
 &kp ESCAPE  &auto_shift LS(Q) Q  &auto_shift LS(W) W  &auto_shift LS(E) E  &auto_shift R LS(R)  &auto_shift LS(T) T    &auto_shift LS(Y) Y  &auto_shift LS(U) U  &auto_shift LS(I) I          &auto_shift LS(O) O      &auto_shift LS(P) P          &kp BACKSPACE
 &kp TAB     &auto_shift LS(A) A  &auto_shift LS(S) S  &auto_shift LS(D) D  &auto_shift LS(F) F  &auto_shift LS(G) G    &auto_shift LS(H) H  &auto_shift LS(J) J  &auto_shift LS(K) K          &auto_shift LS(L) L      &auto_shift LS(SEMI) SEMI    &auto_shift LS(SQT) SQT
 &kp LCTRL   &auto_shift LS(Z) Z  &auto_shift LS(X) X  &auto_shift LS(C) C  &auto_shift LS(V) V  &auto_shift LS(B) B    &auto_shift LS(N) N  &auto_shift LS(M) M  &auto_shift LS(COMMA) COMMA  &auto_shift LS(DOT) DOT  &auto_shift LS(SLASH) SLASH  &kp RIGHT_ALT
-                                                      &mt LEFT_GUI ESCAPE  &lt 1 UNDER          &lt 3 SPACE            &lt 4 RETURN         &lt 2 BACKSPACE      &mt RIGHT_SHIFT DELETE
+                                                      &mt LEFT_GUI ESC     &lt 1 UNDER          &lt 3 SPACE            &lt 4 RETURN         &lt 2 BACKSPACE      &mt RIGHT_SHIFT DELETE
             >;
         };
 
@@ -98,7 +98,7 @@
         Mouse {
             bindings = <
 &none  &none  &none      &none      &none      &none    &none  &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &none            &none
-&none  &none  &mkp RCLK  &mkp MCLK  &mkp LCLK  &none    &none  &mmv MOVE_LEFT  &mmv MOVE_LEFT  &mmv MOVE_UP   &mmv MOVE_RIGHT  &none
+&none  &none  &mkp RCLK  &mkp MCLK  &mkp LCLK  &none    &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP   &mmv MOVE_RIGHT  &none
 &none  &none  &none      &none      &none      &none    &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP   &msc SCRL_RIGHT  &none
                          &none      &none      &none    &none  &none           &none
             >;
