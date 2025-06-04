@@ -101,7 +101,7 @@
             bindings = <
 &trans  &kp LS(N1)     &kp LS(N2)        &kp LS(N3)  &kp LS(N4)                           &kp LS(N9)                                   &kp LS(N0)                                   &kp N7        &kp N8        &kp N9        &none                    &trans
 &trans  &kp LS(N5)     &kp LS(NUMBER_6)  &kp LS(N7)  &auto_shift LS(BACKSLASH) BACKSLASH  &auto_shift LS(LEFT_BRACKET) LEFT_BRACKET    &auto_shift LS(RIGHT_BRACKET) RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &auto_shift LS(SQT) SQT  &trans
-&trans  &kp LS(EQUAL)  &kp LS(MINUS)     &kp LS(N8)  &kp LS(SLASH)                        &none                                        &kp EQUAL                                    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none                    &trans
+&trans  &kp LS(EQUAL)  &kp MINUS         &kp LS(N8)  &kp SLASH                            &none                                        &kp EQUAL                                    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none                    &trans
                                          &trans      &trans                               &trans                                       &trans                                       &kp N0        &none
             >;
         };
