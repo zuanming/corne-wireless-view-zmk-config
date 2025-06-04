@@ -81,10 +81,10 @@
 
         OneShot {
             bindings = <
-&trans  &auto_shift LS(GRAVE) GRAVE  &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans                       &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans                       &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
-                                             &trans  &trans  &trans    &trans  &mo 4   &kp DELETE
+&trans  &auto_shift LS(GRAVE) GRAVE  &trans  &trans  &trans   &trans    &trans  &trans  &trans      &trans  &trans                   &trans
+&trans  &trans                       &trans  &trans  &trans   &trans    &trans  &trans  &trans      &trans  &auto_shift LS(SQT) SQT  &trans
+&trans  &trans                       &trans  &trans  &trans   &trans    &trans  &trans  &trans      &trans  &trans                   &trans
+                                             &trans  &kp TAB  &trans    &trans  &mo 4   &kp DELETE
             >;
 
             label = "OneShot";
