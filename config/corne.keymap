@@ -37,7 +37,7 @@
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <230>;
+            tapping-term-ms = <250>;
             quick-tap-ms = <200>;
         };
 
@@ -47,6 +47,16 @@
             bindings = <&mo>;
             #binding-cells = <1>;
             release-after-ms = <400>;
+        };
+
+        mt_one_shot_mod: mto {
+            compatible = "zmk,behavior-hold-tap";
+            label = "mto";
+            bindings = <&kp>, <&one_shot_mo>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -62,11 +72,22 @@
 
             display-name = "Base";
             bindings = <
-&kp ESCAPE  &auto_shift LS(Q) Q  &auto_shift LS(W) W  &auto_shift LS(E) E  &auto_shift LS(R) R  &auto_shift LS(T) T    &auto_shift LS(Y) Y  &auto_shift LS(U) U  &auto_shift LS(I) I          &auto_shift LS(O) O      &auto_shift LS(P) P          &kp BACKSPACE
-&kp TAB     &auto_shift LS(A) A  &auto_shift LS(S) S  &auto_shift LS(D) D  &auto_shift LS(F) F  &auto_shift LS(G) G    &auto_shift LS(H) H  &auto_shift LS(J) J  &auto_shift LS(K) K          &auto_shift LS(L) L      &auto_shift LS(SEMI) SEMI    &auto_shift LS(SQT) SQT
-&kp LCTRL   &auto_shift LS(Z) Z  &auto_shift LS(X) X  &auto_shift LS(C) C  &auto_shift LS(V) V  &auto_shift LS(B) B    &auto_shift LS(N) N  &auto_shift LS(M) M  &auto_shift LS(COMMA) COMMA  &auto_shift LS(DOT) DOT  &auto_shift LS(SLASH) SLASH  &kp RIGHT_SHIFT
-                                                      &mt LEFT_GUI ESC     &lt 1 UNDER          &lt 3 SPACE            &lt 4 RETURN         &lt 2 BACKSPACE      &one_shot_mo 5
+&auto_shift LS(GRAVE) GRAVE  &auto_shift LS(Q) Q  &auto_shift LS(W) W  &auto_shift LS(E) E  &auto_shift LS(R) R  &auto_shift LS(T) T    &auto_shift LS(Y) Y  &auto_shift LS(U) U  &auto_shift LS(I) I           &auto_shift LS(O) O      &auto_shift LS(P) P          &kp BACKSPACE
+&kp TAB                      &auto_shift LS(A) A  &auto_shift LS(S) S  &auto_shift LS(D) D  &auto_shift LS(F) F  &auto_shift LS(G) G    &auto_shift LS(H) H  &auto_shift LS(J) J  &auto_shift LS(K) K           &auto_shift LS(L) L      &auto_shift LS(SEMI) SEMI    &auto_shift LS(SQT) SQT
+&kp LCTRL                    &auto_shift LS(Z) Z  &auto_shift LS(X) X  &auto_shift LS(C) C  &auto_shift LS(V) V  &auto_shift LS(B) B    &auto_shift LS(N) N  &auto_shift LS(M) M  &auto_shift LS(COMMA) COMMA   &auto_shift LS(DOT) DOT  &auto_shift LS(SLASH) SLASH  &kp RIGHT_SHIFT
+                                                                       &mt LEFT_GUI ESC     &lt 2 UNDER          &lt 4 SPACE            &lt 5 RETURN         &lt 3 BACKSPACE      &mt_one_shot_mod RIGHT_ALT 1
             >;
+        };
+
+        OneShot {
+            bindings = <
+&trans  &auto_shift LS(GRAVE) GRAVE  &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
+&trans  &trans                       &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
+&trans  &trans                       &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
+                                             &trans  &trans  &trans    &trans  &mo 4   &kp DELETE
+            >;
+
+            label = "OneShot";
         };
 
         NumSym {
@@ -78,10 +99,10 @@
 
             display-name = "NumSym";
             bindings = <
-&trans  &kp LS(N1)  &kp LS(N2)        &kp LS(N3)                                 &kp LS(N4)                                   &auto_shift LS(GRAVE) GRAVE    &kp LS(N8)  &kp N7        &kp N8        &kp N9        &kp MINUS      &trans
-&trans  &kp LS(N5)  &kp LS(NUMBER_6)  &kp LS(N7)                                 &kp BACKSLASH                                &auto_shift LS(SEMI) SEMI      &kp SLASH   &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp LS(EQUAL)  &trans
-&trans  &kp LS(N9)  &kp LS(N0)        &auto_shift LS(LEFT_BRACKET) LEFT_BRACKET  &auto_shift LS(RIGHT_BRACKET) RIGHT_BRACKET  &none                          &kp COMMA   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp EQUAL      &trans
-                                      &trans                                     &trans                                       &trans                         &kp EQUAL   &kp N0        &kp PERIOD
+&trans  &kp LS(N1)     &kp LS(N2)        &kp LS(N3)  &kp LS(N4)                           &kp LS(N9)                                   &kp LS(N0)                                   &kp N7        &kp N8        &kp N9        &none                    &trans
+&trans  &kp LS(N5)     &kp LS(NUMBER_6)  &kp LS(N7)  &auto_shift LS(BACKSLASH) BACKSLASH  &auto_shift LS(LEFT_BRACKET) LEFT_BRACKET    &auto_shift LS(RIGHT_BRACKET) RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &auto_shift LS(SQT) SQT  &trans
+&trans  &kp LS(EQUAL)  &kp LS(MINUS)     &kp LS(N8)  &kp LS(SLASH)                        &none                                        &kp EQUAL                                    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none                    &trans
+                                         &trans      &trans                               &trans                                       &trans                                       &kp N0        &none
             >;
         };
 
@@ -123,17 +144,6 @@
             >;
 
             label = "Function";
-        };
-
-        OneShot {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans      &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &mo 3   &kp DELETE
-            >;
-
-            label = "OneShot";
         };
     };
 };
