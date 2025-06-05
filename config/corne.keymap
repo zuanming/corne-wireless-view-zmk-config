@@ -98,10 +98,10 @@
 
             display-name = "Navigation";
             bindings = <
-&none  &none  &none  &none  &none  &none    &none               &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &none          &none
-&none  &none  &none  &none  &none  &none    &kp LG(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp LG(RIGHT)  &none
-&none  &none  &none  &none  &none  &none    &none               &none           &none           &none          &none          &none
-                     &none  &mo 3  &none    &none               &none           &none
+&none  &none  &none  &none  &none  &none      &none               &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &none          &none
+&none  &none  &none  &none  &none  &none      &kp LG(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp LG(RIGHT)  &none
+&none  &none  &none  &none  &none  &none      &none               &none           &none           &none          &none          &none
+                     &none  &mo 3  &kp TAB    &none               &none           &none
             >;
 
             label = "Nav";
