@@ -129,7 +129,7 @@
             label = "Func";
         };
 
-        Base_AS {
+        QWERTY {
             bindings = <
 &kp GRAVE  &kp Q  &kp W  &kp E            &kp R        &kp T        &kp Y    &kp U            &kp I         &kp O    &kp P     &trans
 &kp TAB    &kp A  &kp S  &kp D            &kp F        &kp G        &kp H    &kp J            &kp K         &kp L    &kp SEMI  &kp SQT
@@ -137,7 +137,7 @@
                          &mt LGUI ESCAPE  &lt 1 UNDER  &kp SPACE    &kp RET  &lt 2 BACKSPACE  &lt 4 DELETE
             >;
 
-            label = "base_as";
+            label = "QWERTY";
         };
     };
 };
