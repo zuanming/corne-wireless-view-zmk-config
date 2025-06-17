@@ -23,17 +23,37 @@
 
         Caps {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <12 23>;
+            key-positions = <13 22>;
         };
 
         numsym_r {
             bindings = <&mo 1>;
-            key-positions = <13 14>;
+            key-positions = <1 2>;
         };
 
         numsym_l {
             bindings = <&mo 1>;
-            key-positions = <22 21>;
+            key-positions = <9 10>;
+        };
+
+        shift_l {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <13 14>;
+        };
+
+        shift_r {
+            bindings = <&kp RIGHT_SHIFT>;
+            key-positions = <21 22>;
+        };
+
+        shift_l2 {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <26 25>;
+        };
+
+        shift_right2 {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <33 34>;
         };
     };
 
@@ -76,6 +96,16 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&mo 1>;
         };
+
+        lt_tap: lt_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_TAP";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+        };
     };
 
     keymap {
@@ -90,10 +120,10 @@
 
             display-name = "Base";
             bindings = <
-&auto_shift LS(GRAVE) GRAVE  &kp Q  &kp W  &kp E          &kp R                 &kp T        &kp Y       &kp U            &kp I                        &kp O                          &kp P                       &kp DELETE
-&kp LSHFT                    &kp A  &kp S  &kp D          &kp F                 &kp G        &kp H       &kp J            &kp K                        &kp L                          &auto_shift RS(SEMI) SEMI   &kp RSHFT
-&kp LEFT_ALT                 &kp Z  &kp X  &kp C          &kp V                 &kp B        &kp N       &kp M            &auto_shift RS(COMMA) COMMA  &auto_shift RS(PERIOD) PERIOD  &auto_shift RS(FSLH) SLASH  &kp RIGHT_GUI
-                                           &mt LCTRL ESC  &tap_dance_shift_sym  &kp SPACE    &kp RETURN  &lt 2 BACKSPACE  &lt 4 DELETE
+&auto_shift LS(GRAVE) GRAVE  &kp Q  &kp W  &kp E          &kp R      &kp T        &kp Y            &kp U            &kp I                        &kp O                          &kp P                       &kp DELETE
+&kp LSHFT                    &kp A  &kp S  &kp D          &kp F      &kp G        &kp H            &kp J            &kp K                        &kp L                          &auto_shift RS(SEMI) SEMI   &kp RSHFT
+&kp LEFT_ALT                 &kp Z  &kp X  &kp C          &kp V      &kp B        &kp N            &kp M            &auto_shift RS(COMMA) COMMA  &auto_shift RS(PERIOD) PERIOD  &auto_shift RS(FSLH) SLASH  &kp RIGHT_GUI
+                                           &mt LCTRL ESC  &lt 1 TAB  &kp SPACE    &lt_tap 4 SPACE  &lt 2 BACKSPACE  &mt_tap RIGHT_ALT DELETE
             >;
 
             label = "Base";
