@@ -23,37 +23,37 @@
 
         Caps {
             bindings = <&kp CAPSLOCK>;
-            key-positions = <13 22>;
+            key-positions = <12 23>;
         };
 
-        numsym_r {
-            bindings = <&mo 1>;
-            key-positions = <1 2>;
+        left_parenthesis {
+            bindings = <&kp LS(N9)>;
+            key-positions = <27 28>;
         };
 
-        numsym_l {
-            bindings = <&mo 1>;
-            key-positions = <9 10>;
+        right_parenthesis {
+            bindings = <&kp LS(N0)>;
+            key-positions = <31 32>;
         };
 
-        shift_l {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <13 14>;
+        left_brace {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <16 15>;
         };
 
-        shift_r {
-            bindings = <&kp RIGHT_SHIFT>;
-            key-positions = <21 22>;
+        right_brace {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <20 19>;
         };
 
-        shift_l2 {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <26 25>;
+        left_bracket {
+            bindings = <&kp LS(LEFT_BRACKET)>;
+            key-positions = <3 4>;
         };
 
-        shift_right2 {
-            bindings = <&kp LEFT_SHIFT>;
-            key-positions = <33 34>;
+        right_bracket {
+            bindings = <&kp RS(RIGHT_BRACKET)>;
+            key-positions = <7 8>;
         };
     };
 
@@ -90,13 +90,6 @@
             hold-trigger-on-release;
         };
 
-        tap_dance_shift_sym: td_shift_sym {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_SHIFT_SYM";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&mo 1>;
-        };
-
         lt_tap: lt_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_TAP";
@@ -105,6 +98,13 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
+        };
+
+        tap_dance_semi_sqt: td_semi_sqt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SEMI_SQT";
+            #binding-cells = <0>;
+            bindings = <&auto_shift LS(SQT) SQT>, <&auto_shift LS(SEMI) SEMI>;
         };
     };
 
@@ -120,10 +120,10 @@
 
             display-name = "Base";
             bindings = <
-&auto_shift LS(GRAVE) GRAVE  &kp Q  &kp W  &kp E          &kp R      &kp T        &kp Y            &kp U            &kp I                        &kp O                          &kp P                       &kp DELETE
-&kp LSHFT                    &kp A  &kp S  &kp D          &kp F      &kp G        &kp H            &kp J            &kp K                        &kp L                          &auto_shift RS(SEMI) SEMI   &kp RSHFT
-&kp LEFT_ALT                 &kp Z  &kp X  &kp C          &kp V      &kp B        &kp N            &kp M            &auto_shift RS(COMMA) COMMA  &auto_shift RS(PERIOD) PERIOD  &auto_shift RS(FSLH) SLASH  &kp RIGHT_GUI
-                                           &mt LCTRL ESC  &lt 1 TAB  &kp SPACE    &lt_tap 4 SPACE  &lt 2 BACKSPACE  &mt_tap RIGHT_ALT DELETE
+&auto_shift LS(GRAVE) GRAVE         &kp Q  &kp W  &kp E                               &kp R            &kp T        &kp Y      &kp U            &kp I                        &kp O                          &kp P                       &kp DELETE
+&mt_hold_while_undecided LSHFT TAB  &kp A  &kp S  &kp D                               &kp F            &kp G        &kp H      &kp J            &kp K                        &kp L                          &tap_dance_semi_sqt         &kp RSHFT
+&kp LEFT_ALT                        &kp Z  &kp X  &kp C                               &kp V            &kp B        &kp N      &kp M            &auto_shift RS(COMMA) COMMA  &auto_shift RS(PERIOD) PERIOD  &auto_shift RS(FSLH) SLASH  &kp RIGHT_GUI
+                                                  &mt_hold_while_undecided LCTRL ESC  &lt 1 LS(MINUS)  &kp SPACE    &kp ENTER  &lt 2 BACKSPACE  &lt_tap 4 DELETE
             >;
 
             label = "Base";
@@ -138,9 +138,9 @@
 
             display-name = "NumSym";
             bindings = <
-&trans  &kp LS(N1)     &kp LS(N2)               &kp LS(N3)  &kp LS(N4)                           &kp LS(N9)                                   &kp LS(N0)                                   &kp N7        &kp N8        &kp N9        &none                    &trans
-&trans  &kp LS(N5)     &kp LS(NUMBER_6)         &kp LS(N7)  &auto_shift LS(BACKSLASH) BACKSLASH  &auto_shift LS(LEFT_BRACKET) LEFT_BRACKET    &auto_shift LS(RIGHT_BRACKET) RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &auto_shift LS(SQT) SQT  &trans
-&trans  &kp LS(EQUAL)  &auto_shift UNDER MINUS  &kp LS(N8)  &kp SLASH                            &auto_shift LS(GRAVE) GRAVE                  &kp EQUAL                                    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none                    &trans
+&trans  &kp LS(N1)     &kp LS(N2)               &kp LS(N3)  &kp LS(N4)                           &kp LS(N9)                                   &kp LS(N0)                                   &kp N7        &kp N8        &kp N9        &none    &trans
+&trans  &kp LS(N5)     &kp LS(NUMBER_6)         &kp LS(N7)  &auto_shift LS(BACKSLASH) BACKSLASH  &auto_shift LS(LEFT_BRACKET) LEFT_BRACKET    &auto_shift LS(RIGHT_BRACKET) RIGHT_BRACKET  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp SQT  &trans
+&trans  &kp LS(EQUAL)  &auto_shift UNDER MINUS  &kp LS(N8)  &kp SLASH                            &auto_shift LS(GRAVE) GRAVE                  &kp EQUAL                                    &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none    &trans
                                                 &trans      &trans                               &trans                                       &kp EQUAL                                    &kp N0        &none
             >;
         };
@@ -154,10 +154,10 @@
 
             display-name = "Navigation";
             bindings = <
-&none  &none  &none  &none  &none  &none      &none               &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &none          &none
-&none  &none  &none  &none  &none  &none      &kp LG(LEFT_ARROW)  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp LG(RIGHT)  &none
-&none  &none  &none  &none  &none  &none      &none               &none           &none           &none          &none          &none
-                     &none  &mo 3  &kp TAB    &none               &none           &none
+&none  &none  &none  &none  &none  &none      &none     &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &none    &none
+&none  &none  &none  &none  &none  &none      &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp END  &none
+&none  &none  &none  &none  &none  &none      &none     &none           &none           &none          &none    &none
+                     &none  &mo 3  &kp TAB    &none     &none           &none
             >;
 
             label = "Nav";
