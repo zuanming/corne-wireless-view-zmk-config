@@ -90,10 +90,10 @@
 
             display-name = "Base";
             bindings = <
-&auto_shift LS(GRAVE) GRAVE  &kp Q  &kp W  &kp E                               &kp R      &kp T                       &kp Y                      &kp U            &kp I                        &kp O                          &kp P                       &kp DELETE
-&kp TAB                      &kp A  &kp S  &kp D                               &kp F      &kp G                       &kp H                      &kp J            &kp K                        &kp L                          &auto_shift SEMI APOS       &kp APOS
-&kp LEFT_ALT                 &kp Z  &kp X  &kp C                               &kp V      &kp B                       &kp N                      &kp M            &auto_shift RS(COMMA) COMMA  &auto_shift RS(PERIOD) PERIOD  &auto_shift RS(FSLH) SLASH  &kp RIGHT_GUI
-                                           &mt_hold_while_undecided LCTRL ESC  &lt 1 TAB  &mt_tap SPACE LEFT_SHIFT    &mt_tap ENTER RIGHT_SHIFT  &lt 2 BACKSPACE  &lt_tap 4 DELETE
+&kp TAB       &kp Q  &kp W  &kp E                               &kp R      &kp T                       &kp Y                      &kp U            &kp I                        &kp O                          &kp P                       &kp DELETE
+&kp CLCK      &kp A  &kp S  &kp D                               &kp F      &kp G                       &kp H                      &kp J            &kp K                        &kp L                          &auto_shift SEMI APOS       &kp APOS
+&kp LEFT_ALT  &kp Z  &kp X  &kp C                               &kp V      &kp B                       &kp N                      &kp M            &auto_shift RS(COMMA) COMMA  &auto_shift RS(PERIOD) PERIOD  &auto_shift RS(FSLH) SLASH  &kp RIGHT_GUI
+                            &mt_hold_while_undecided LCTRL ESC  &lt 1 TAB  &mt_tap SPACE LEFT_SHIFT    &mt_tap ENTER RIGHT_SHIFT  &lt 2 BACKSPACE  &lt_tap 4 DELETE
             >;
 
             label = "Base";
@@ -124,10 +124,10 @@
 
             display-name = "Navigation";
             bindings = <
-&none  &none  &none  &none  &none      &none     &none     &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &none    &none
-&none  &none  &none  &none  &none      &none     &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp END  &none
-&none  &none  &none  &none  &none      &none     &none     &none           &none           &none          &none    &none
-                     &none  &kp UNDER  &trans    &none     &none           &none
+&none  &kp GRAVE  &none  &none   &none      &none     &none     &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN  &none    &none
+&none  &none      &none  &none   &none      &none     &kp HOME  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT      &kp END  &none
+&none  &none      &none  &none   &none      &none     &none     &none           &none           &none          &none    &none
+                         &trans  &kp UNDER  &trans    &trans    &kp BACKSPACE   &kp DEL
             >;
 
             label = "Nav";
