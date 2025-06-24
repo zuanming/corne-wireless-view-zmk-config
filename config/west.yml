@@ -12,5 +12,8 @@ manifest:
     - name: zmk-oled-adapter
       remote: zuanming
       revision: main
+    - name: zmk-nice-oled
+      remote: zuanming
+      revision: main
   self:
     path: config
