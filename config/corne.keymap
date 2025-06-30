@@ -27,7 +27,7 @@
         };
 
         Capword {
-            bindings = <&Capsword>;
+            bindings = <&caps_word>;
             key-positions = <25 34>;
         };
     };
@@ -94,14 +94,6 @@
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
             flavor = "balanced";
-        };
-
-        Capsword: cw {
-            compatible = "zmk,behavior-caps-word";
-            label = "CAPSWORD";
-            #binding-cells = <0>;
-            continue-list = <BACKSPACE MINUS>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
