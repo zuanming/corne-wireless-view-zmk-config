@@ -59,6 +59,27 @@
             hold-while-undecided;
             hold-trigger-on-release;
         };
+
+        os: one_shot {
+            compatible = "zmk,behavior-sticky-key";
+            label = "ONE_SHOT";
+            bindings = <&kp>;
+            #binding-cells = <1>;
+            release-after-ms = <1000>;
+            quick-release;
+        };
+
+        lo: layer_oneshot {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LAYER_ONESHOT";
+            bindings = <&mo>, <&os>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "hold-preferred";
+            hold-while-undecided;
+        };
     };
 
     keymap {
@@ -73,10 +94,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB            &kp Q  &kp W  &kp E             &kp R        &kp T        &kp Y      &kp U  &kp I         &kp O    &kp P                      &kp DELETE
-&mt_tap LCTRL TAB  &kp A  &kp S  &kp D             &kp F        &kp G        &kp H      &kp J  &kp K         &kp L    &auto_shift SQT SEMICOLON  &mt_tap RIGHT_ALT APOS
-&kp LEFT_SHIFT     &kp Z  &kp X  &kp C             &kp V        &kp B        &kp N      &kp M  &kp COMMA     &kp DOT  &kp FSLH                   &kp LEFT_SHIFT
-                                 &mt LEFT_GUI ESC  &lt 1 UNDER  &kp SPACE    &kp ENTER  &mo 2  &lt 4 DELETE
+&kp TAB         &kp Q  &kp W  &kp E             &kp R             &kp T        &kp Y      &kp U  &kp I         &kp O    &kp P                      &kp DELETE
+&kp LCTRL       &kp A  &kp S  &kp D             &kp F             &kp G        &kp H      &kp J  &kp K         &kp L    &auto_shift SQT SEMICOLON  &mt_tap RIGHT_ALT APOS
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C             &kp V             &kp B        &kp N      &kp M  &kp COMMA     &kp DOT  &kp FSLH                   &kp LEFT_SHIFT
+                              &mt LEFT_GUI ESC  &lo 1 LEFT_SHIFT  &kp SPACE    &kp ENTER  &mo 2  &lt 4 DELETE
             >;
 
             label = "Base";
