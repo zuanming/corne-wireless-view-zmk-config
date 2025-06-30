@@ -28,7 +28,7 @@
 
         Capword {
             bindings = <&caps_word>;
-            key-positions = <25 34>;
+            key-positions = <37 40>;
         };
     };
 
