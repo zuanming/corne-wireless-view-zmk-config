@@ -101,6 +101,8 @@
             label = "SHIFT_CAPS_LAYER";
             #binding-cells = <0>;
             bindings = <&lo 1 LEFT_SHIFT>, <&caps_word>;
+
+            tapping-term-ms = <300>;
         };
     };
 
