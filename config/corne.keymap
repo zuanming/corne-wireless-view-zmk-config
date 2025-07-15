@@ -85,9 +85,9 @@
             ignore-modifiers;
         };
 
-        lo: layer_oneshot {
+        lo_bal: layer_oneshot_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "Layer Oneshot";
+            label = "Layer Oneshot Tap";
             bindings = <&mo>, <&os>;
 
             #binding-cells = <2>;
@@ -101,9 +101,21 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SHIFT_CAPS_LAYER";
             #binding-cells = <0>;
-            bindings = <&lo 1 LEFT_SHIFT>, <&caps_word>;
+            bindings = <&lo_bal 1 LEFT_SHIFT>, <&caps_word>;
 
             tapping-term-ms = <300>;
+        };
+
+        lo_hold: layer_oneshot_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Layer Oneshot Hold";
+            bindings = <&mo>, <&os>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            flavor = "hold-preferred";
+            hold-while-undecided;
         };
     };
 
