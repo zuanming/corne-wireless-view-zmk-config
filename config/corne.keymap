@@ -131,10 +131,10 @@
 
             display-name = "Base";
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp E                                  &kp R                 &kp T        &kp Y            &kp U            &kp I                        &kp O                          &kp P                       &kp DELETE
-&kp LCTRL       &kp A  &kp S  &kp D                                  &kp F                 &kp G        &kp H            &kp J            &kp K                        &kp L                          &auto_shift SEMI APOS       &kp APOS
-&kp LEFT_SHIFT  &kp Z  &kp X  &kp C                                  &kp V                 &kp B        &kp N            &kp M            &auto_shift RS(COMMA) COMMA  &auto_shift RS(PERIOD) PERIOD  &auto_shift RS(FSLH) SLASH  &kp RIGHT_SHIFT
-                              &mt_hold_while_undecided LEFT_GUI ESC  &lo_bal 1 LEFT_SHIFT  &kp SPACE    &lt_tap 4 ENTER  &lt 2 BACKSPACE  &mt_tap RIGHT_ALT DEL
+&kp TAB         &kp Q  &kp W  &kp E                               &kp R                 &kp T        &kp Y            &kp U            &kp I                        &kp O                          &kp P                       &kp DELETE
+&caps_word      &kp A  &kp S  &kp D                               &kp F                 &kp G        &kp H            &kp J            &kp K                        &kp L                          &auto_shift SEMI APOS       &kp APOS
+&kp LEFT_SHIFT  &kp Z  &kp X  &kp C                               &kp V                 &kp B        &kp N            &kp M            &auto_shift RS(COMMA) COMMA  &auto_shift RS(PERIOD) PERIOD  &auto_shift RS(FSLH) SLASH  &kp RIGHT_SHIFT
+                              &mt_hold_while_undecided LCTRL ESC  &lo_bal 1 LEFT_SHIFT  &kp SPACE    &lt_tap 4 ENTER  &lt 2 BACKSPACE  &mt_tap RIGHT_ALT DEL
             >;
 
             label = "Base";
