@@ -188,5 +188,14 @@
 
             label = "bluetooth";
         };
+
+        Navigation {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &kp UP    &trans     &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans     &trans   &trans
+                        &trans  &trans  &trans    &trans    &trans    &trans
+            >;
+        };
     };
 };
