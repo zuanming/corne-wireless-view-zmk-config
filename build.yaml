@@ -18,6 +18,6 @@ include:
     shield: corne_left nice_view_adapter nice_epaper
     snippet: studio-rpc-usb-uart
   - board: mikoto@7.2
-    shield: corne_right nice_view_adapter nice_epaper
+    shield: corne_right nice_view_adapter nice_view_battery
   - board: mikoto@7.2
     shield: settings_reset
