@@ -156,15 +156,13 @@
             >;
         };
 
-        Mouse {
+        Navigation {
             bindings = <
-&none  &none  &none           &msc SCRL_UP    &none            &none    &none  &none           &mmv MOVE_UP    &none            &none  &none
-&none  &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none    &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none  &none
-&none  &none  &mkp RCLK       &mkp MCLK       &mkp LCLK        &none    &none  &none           &none           &none            &none  &none
-                              &none           &none            &none    &none  &none           &none
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &kp UP    &trans     &trans   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans     &trans   &trans
+                        &trans  &trans  &trans    &trans    &trans    &trans
             >;
-
-            label = "Mouse";
         };
 
         Function {
@@ -189,13 +187,5 @@
             label = "bluetooth";
         };
 
-        Navigation {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &kp UP    &trans     &trans   &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp HOME  &kp LEFT  &kp DOWN  &kp RIGHT  &kp END  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans    &trans     &trans   &trans
-                        &trans  &trans  &trans    &trans    &trans    &trans
-            >;
-        };
     };
 };
