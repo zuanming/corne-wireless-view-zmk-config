@@ -4,8 +4,6 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: zuanming
       url-base: https://github.com/zuanming
-    - name: zuanming
-      url-base: https://github.com/zuanming
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -24,7 +22,7 @@ manifest:
       remote: zuanming
       revision: main
     - name: zmk-dongle-display
-      remote: englmaxi
+      remote: zuanming
       revision: main
   self:
     path: config
