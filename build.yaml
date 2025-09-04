@@ -19,9 +19,9 @@ include:
     artifact-name: nice_corne_dongle_oled
     snippet: studio-rpc-usb-uart
   - board: mikoto@7.2
-    shield: corne_left_peripheral nice_view_adapter nice_epaper
+    shield: corne_left_peripheral nice_view_adapter nice_view_battery
     # snippet: studio-rpc-usb-uart
   - board: mikoto@7.2
-    shield: corne_right nice_view_adapter nice_epaper
+    shield: corne_right nice_view_adapter nice_view_battery
   - board: mikoto@7.2
     shield: settings_reset
