@@ -13,8 +13,8 @@
 #
 ---
 include:
-  - board: nice_nano_v2
-    shield: corne_dongle_pro_micro dongle_display
+  - board: nrf52840dongle_nrf52840
+    shield: corne_dongle_nordic
     cmake-args: -DCONFIG_ZMK_KEYBOARD_NAME=\"Nice_Dongle_O\"
     artifact-name: nice_corne_dongle_oled
     snippet: studio-rpc-usb-uart
