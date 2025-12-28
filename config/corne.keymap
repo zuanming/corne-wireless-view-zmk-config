@@ -52,6 +52,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
+            quick-tap-ms = <200>;
         };
 
         mt_hold_while_undecided: mt_hold_while_undecided {
@@ -63,6 +64,7 @@
             tapping-term-ms = <200>;
             hold-while-undecided;
             hold-trigger-on-release;
+            quick-tap-ms = <200>;
         };
 
         lt_tap: lt_tap {
@@ -73,6 +75,7 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "tap-preferred";
+            quick-tap-ms = <200>;
         };
 
         os: oneshot {
@@ -92,7 +95,6 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
             flavor = "balanced";
             hold-while-undecided;
         };
