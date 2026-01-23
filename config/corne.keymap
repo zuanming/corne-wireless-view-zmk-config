@@ -32,49 +32,7 @@
         };
     };
 
-   behaviors {
-        as: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping_term_ms = <250>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        mt_tap: mt_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_TAP";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "tap-preferred";
-            quick-tap-ms = <199>;
-        };
-
-        mt_hold_while_undecided: mt_hold_while_undecided {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_HOLD_WHILE_UNDECIDED";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            hold-while-undecided;
-            hold-trigger-on-release;
-        };
-
-        lt_bal: lt_bal {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LT_BAL";
-            bindings = <&mo>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-            quick-tap-ms = <200>;
-        };
-
+ behaviors {
         oneshot: oneshot {
             compatible = "zmk,behavior-sticky-key";
             label = "os";
@@ -85,25 +43,55 @@
             ignore-modifiers;
         };
 
-        layer_oneshot: lo {
+        layer_oneshot_hold: lo_hold {
             compatible = "zmk,behavior-hold-tap";
-            label = "lo";
+            label = "lo_hold";
             bindings = <&mo>, <&oneshot>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             quick-tap-ms = <200>;
             hold-while-undecided;
         };
 
-        scl: shift_caps_layer {
-            compatible = "zmk,behavior-tap-dance";
-            label = "SHIFT_CAPS_LAYER";
-            #binding-cells = <0>;
-            bindings = <&layer_oneshot 0 LEFT_SHIFT>, <&caps_word>;
+        home_row_mod_right: hrm_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_MOD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            retro-tap;
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41 42 50 51 52 53>;
+        };
+
+        ltmiryoku: mlt {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LTMIRYOKU";
+            bindings = <&mo>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+        };
+
+        home_row_mod_left: hrm_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOME_ROW_MOD_LEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
         };
     };
+
 
     keymap {
         compatible = "zmk,keymap";
