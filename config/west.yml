@@ -18,10 +18,10 @@ manifest:
     # - name: zmk-nice-oled
     #   remote: zuanming
     #   revision: main
-    - name: zmk-dongle
-      remote: zuanming
-      revision: main
     - name: zmk-dongle-display
+      remote: englmaxi
+      revision: v0.3
+    - name: zmk-config
       remote: zuanming
       revision: main
   self:
