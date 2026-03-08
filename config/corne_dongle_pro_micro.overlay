@@ -1,0 +1,5 @@
+#include "corne.dtsi"
+
+&bt {
+    CONFIG_ZMK_BLE_CENTRAL=y;
+};
