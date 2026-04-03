@@ -53,18 +53,6 @@
             hold-while-undecided;
         };
 
-        home_row_mod_right: hrm_right {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW_MOD_RIGHT";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <200>;
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38>;
-        };
-
         ltmiryoku: mlt {
             compatible = "zmk,behavior-hold-tap";
             label = "LTMIRYOKU";
@@ -77,16 +65,15 @@
             require-prior-idle-ms = <125>;
         };
 
-        home_row_mod_left: hrm_left {
+        home_row_mod: hrm {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOME_ROW_MOD_LEFT";
+            label = "HOME_ROW_MOD";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             quick-tap-ms = <200>;
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
         };
     };
 
@@ -96,10 +83,10 @@
         base {
             display-name = "Base";
             bindings = <
-&kp GRAVE   &kp Q                          &kp W                          &kp E                              &kp R                            &kp T                 &kp Y                &kp U                              &kp I                                &kp O                            &kp P                                    &kp BACKSLASH
-&caps_word  &home_row_mod_left LEFT_GUI A  &home_row_mod_left LEFT_ALT S  &home_row_mod_left LEFT_CONTROL D  &home_row_mod_left LEFT_SHIFT F  &kp G                 &kp H                &home_row_mod_right RIGHT_SHIFT J  &home_row_mod_right RIGHT_CONTROL K  &home_row_mod_right RIGHT_ALT L  &home_row_mod_right RIGHT_GUI SEMICOLON  &kp SQT
-&kp LSHFT   &kp Z                          &kp X                          &kp C                              &kp V                            &kp B                 &kp N                &kp M                              &kp COMMA                            &kp DOT                          &kp FSLH                                 &kp RSHFT
-                                                                          &ltmiryoku 1 ESCAPE                &ltmiryoku 3 MINUS               &ltmiryoku 5 SPACE    &ltmiryoku 4 RETURN  &ltmiryoku 2 BACKSPACE             &kp DELETE
+&kp GRAVE   &kp Q                     &kp W                     &kp F                         &kp P                       &kp B                 &kp J                &kp L                       &kp U                         &kp Y                     &kp APOS                  &kp BACKSLASH
+&caps_word  &home_row_mod LEFT_GUI A  &home_row_mod LEFT_ALT R  &home_row_mod LEFT_CONTROL S  &home_row_mod LEFT_SHIFT F  &kp G                 &kp M                &home_row_mod LEFT_SHIFT N  &home_row_mod LEFT_CONTROL E  &home_row_mod LEFT_ALT I  &home_row_mod LEFT_GUI O  &kp SQT
+&kp LSHFT   &kp Z                     &kp X                     &kp C                         &kp D                       &kp V                 &kp K                &kp H                       &kp COMMA                     &kp DOT                   &kp FSLH                  &kp RSHFT
+                                                                &ltmiryoku 1 ESCAPE           &ltmiryoku 3 MINUS          &ltmiryoku 5 SPACE    &ltmiryoku 4 RETURN  &ltmiryoku 2 BACKSPACE      &kp DELETE
             >;
         };
 
@@ -116,10 +103,10 @@
 
         Sym {
             bindings = <
-&none  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)  &kp LS(N4)  &kt GRAVE        &none  &none      &none      &none     &none     &none
-&none  &kp LS(N5)  &kp LS(N6)  &kp LS(N7)  &kp BSLH    &kp SEMI         &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
-&none  &kp LS(N9)  &kp LS(N0)  &kp LBKT    &kp RBKT    &none            &none  &none      &none      &none     &none     &none
-                               &kp LS(TAB) &kp TAB       &kp LS(MINUS)    &none  &none      &none
+&none  &kp LS(N1)  &kp LS(N2)  &kp LS(N3)   &kp LS(N4)  &kt GRAVE        &none  &none      &none      &none     &none     &none
+&none  &kp LS(N5)  &kp LS(N6)  &kp LS(N7)   &kp BSLH    &kp SEMI         &none  &kp RSHFT  &kp RCTRL  &kp RALT  &kp RGUI  &none
+&none  &kp LS(N9)  &kp LS(N0)  &kp LBKT     &kp RBKT    &none            &none  &none      &none      &none     &none     &none
+                               &kp LS(TAB)  &kp TAB     &kp LS(MINUS)    &none  &none      &none
             >;
 
             label = "Sym";
